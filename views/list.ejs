@@ -7,7 +7,11 @@
     <title>ToDo List</title>
   </head>
   <body>
-    <h1>Today is a <%= kindOfDay%></h1>
-
+    <!-- scriplet tag for inserting JS control flow into a HTML file-->
+    <%if(kindOfDay === "Saturday" || kindOfDay === "Sunday") { %>
+    <h1 style="color:blue"><%= kindOfDay %> ToDo List</h1>
+    <%} else {%>
+    <h1 style="color:yellow"><%= kindOfDay %> ToDo List</h1>
+    <%}%>
   </body>
 </html>
