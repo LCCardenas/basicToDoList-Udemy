@@ -4,14 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>ToDo List</title>
   </head>
   <body>
-    <!-- scriplet tag for inserting JS control flow into a HTML file-->
-    <%if(kindOfDay === "Saturday" || kindOfDay === "Sunday") { %>
-    <h1 style="color:blue"><%= kindOfDay %> ToDo List</h1>
-    <%} else {%>
-    <h1 style="color:yellow"><%= kindOfDay %> ToDo List</h1>
-    <%}%>
+    <div class="box" id="heading">
+    <h1><%= kindOfDay %></h1>
+  </div>
+
+  <div class="box">
+    <% for (var i=0; i<newListItems.length; i++){ %>
+  <div class="item">    
+    <input type="checkbox">
+      <p><%= newListItems[i] %></p></div>
+      <% } %>
+      
+      <form action="/" class="item" method="POST">
+      <input
+        type="text"
+        name="newTask"
+        class=""
+        placeholder="Next task"
+        required
+        autofocus
+        autocomplete="off"
+      />
+      <button class="" type="submit">
+        +
+      </button>
+    </form>
+  </div>
+
+    
   </body>
 </html>
